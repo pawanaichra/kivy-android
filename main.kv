@@ -1,0 +1,35 @@
+# Custom button
+<CustButton@Button>:
+    font_size: 24
+
+<MainGridLayout>:
+    id: Main
+    rows: 2
+    padding: 10
+    spacing: 10
+
+
+    ScrollView:
+    
+        Label:
+            size_hint_y: None
+            height: self.texture_size[1]
+            id: label1
+
+    BoxLayout:
+        size_hint_y: None
+        spacing: 10
+        height: 40
+        ScrollView:
+            size_hint: (.8, 1)
+            TextInput:
+                size_hint_y: None
+                id: entry
+                font_size: 24
+                multiline: True
+
+        CustButton:
+            size_hint: (.2, 1)
+            id: button2
+            text: "Send"
+            on_release: root.send_message()
